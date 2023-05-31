@@ -1,0 +1,27 @@
+<h1>Students</h1>
+<hr>
+<div class="student-table">
+    <table>
+        <thead>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Book</th>
+            <th>Devolution Date</th>
+            <th>Loan Date</th>
+            <th>Devolution</th>
+            <th>Refund</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.student_id}}</td>
+                <td>{{student.student_name}}</td>
+                <td>{{student.book}}</td>
+                <td>{{student.devolution_date}}</td>
+                <td>{{student.loan_date}}</td>
+                <td>{{student.devolution}}</td>
+                <button mat-raised-button color="primary" (click)="refundBook(student)"
+                    *ngIf="student.devolution != true">Refund</button>
+            </tr>
+        </tbody>
+    </table>
+</div>

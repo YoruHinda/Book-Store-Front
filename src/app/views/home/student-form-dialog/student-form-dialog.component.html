@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>New Student</h1>
+<div mat-dialog-content>
+    <form class="example-form" [formGroup]="studentForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>Student Name</mat-label>
+            <input matInput formControlName="student_name" name="student_name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <mat-label>Book</mat-label>
+            <input matInput formControlName="book" name="book">
+        </mat-form-field>
+        <div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Devolution Date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="devolution_date" name="devolution_date" #date>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="example-full-width">
+                <mat-label>Loan Date</mat-label>
+                <input matInput [matDatepicker]="picker2" formControlName="loan_date" name="loan_date" #date>
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </form>
+</div>
+<div mat-dialog-actions class="buttons-confirm">
+    <button mat-raised-button color="primary" (click)="createStudent()">Add</button>
+    <button mat-button (click)="cencel()">Cancel</button>
+</div>
